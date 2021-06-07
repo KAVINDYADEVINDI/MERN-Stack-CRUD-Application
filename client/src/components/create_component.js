@@ -15,8 +15,28 @@ constructor(props){
         address:'',
         nic_number:''
     }
-    
 }
+    onChangeUsername(e){
+        this.setState({
+            user_name:e.target.value
+        });
+    }
+    onChangeAddress(e){
+        this.setState({
+            address:e.target.value
+        });
+    }
+    onChangeNICnumber(e){
+        this.setState({
+            nic_number:e.target.value
+        });
+    }
+    onSubmit(e){
+       e.preventDefault();
+       console.log
+    }
+
+
 
   render(){
     return(
