@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowseRouter as Router,Switch,Route,Link} from 'react-router-dom';
 
-
-class App extends Component{
+class Edit extends Component{
   render(){
     return(
       <div className="container">
-        <h2>ReactKavi</h2>
+        <h2>Edit component</h2>
       </div>
     );
   }
 }
-export default App;
+export default Edit;
