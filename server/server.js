@@ -13,8 +13,12 @@ dotenv.config();
 
 //call DB.js
 const config =require('./DB');
+const userRoutes = require('./user_route');
 
 app.use(express.json());
+
+//use route
+app.use('/user',userRoute);
 
 //connect mongodb
 mongoose.connect(process.env.MONGO_DB,{

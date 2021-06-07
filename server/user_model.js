@@ -5,16 +5,13 @@ const Schema = mongoose.Schema;
 let User=new Schema(
     {
         user_name:{
-            type:String,
-            required=true
+            type:String
         },
         address:{
-            type:String,
-            required=true
+            type:String
         },
         NIC_number:{
-            type:Number,
-            required=true
+            type:Number
         },
 
     },{
