@@ -1,15 +1,25 @@
+
+//add required packages
 const express = require('express');
 const mongoose=require('mongoose');
+const dotenv=require('dotenv');
 // create variable
 
 const app = express();
+//dotnev call
+dotenv.config();
+
+//call DB.js
+const config =require('./DB');
 
 app.use(express.json());
 
 //connect mongodb
-mongoose.connect('mongodb://localhost:27017/usersAuth',{
+mongoose.connect(process.env.MONGO_DB,{
     useNewUrlParser: true,
-    useUnifiedTopology: true 
+    useUnifiedTopology: true,
+    onfulfilled
+    onrejected:err=>{console.log('cannot connect to database'+err)}
 })
 
 //connect server 
