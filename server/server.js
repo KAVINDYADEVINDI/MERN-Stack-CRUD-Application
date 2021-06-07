@@ -3,6 +3,8 @@
 const express = require('express');
 const mongoose=require('mongoose');
 const dotenv=require('dotenv');
+//import route page in user
+const userRoute=require('./user_route');
 // create variable
 
 const app = express();
@@ -18,9 +20,12 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_DB,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // onfulfilled:()=>{console.log('connect to database')},
-    // onrejected:err=>{console.log('cannot connect to database'+err)}
 })
+.then(()=>{
+    console.log('connect to database');
+})  
+ .catch((err)=>
+console.log('connection error',err));
 
 //connect server 
 app.listen(3001, () => { console.log("server is running") })
