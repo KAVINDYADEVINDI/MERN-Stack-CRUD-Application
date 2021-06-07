@@ -13,19 +13,18 @@ class App extends Component{
           <Link to={'/'} className="navbar-brand">React CRUD Operation</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto"></ul>
-                <li className="nav-item">
-                  <Link to={'/'} className="nav-link">Home</Link>
+                <li >
+                  <Link to={'/'} >Home</Link>
                 </li>
-                <li className="nav-item">
-                  <Link to={'/create'} className="nav-link">Create</Link>
+                <li >
+                  <Link to={'/create'} >Create</Link>
                 </li>
-                <li className="nav-item">
-                  <Link to={'/index'} className="nav-link">Index</Link>
+                <li>
+                  <Link to={'/index'} >Index</Link>
                 </li>
             </div>
           </nav><br/>
           <h2>Welcome to CRUD</h2><br/>
-          //add route
           <Switch>
             <Route exact path='/create' component={Create}></Route>
             <Route exact path='/edit/:id' component={Edit}></Route>
