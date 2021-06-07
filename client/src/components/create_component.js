@@ -33,7 +33,13 @@ constructor(props){
     }
     onSubmit(e){
        e.preventDefault();
-       console.log
+       console.log(`the values are ${this.state.user_name},${this.state.address},${this.state.nic_number}`);
+       this.setState({
+           user_name:'',
+           address:'',
+           nic_number:''
+        });
+
     }
 
 
@@ -42,18 +48,30 @@ constructor(props){
     return(
       <div style={{marginTop:10}}>
         <h3>Add New User</h3>
-        <form>
+        <form onSubmit={this.onSubmit}>
             <div className="form-group">
                 <label>User name:</label>
-                <input type="text" className="form-control"></input>
+                <input type="text"
+                    value={this.state.user_name}
+                    onChange={this.onChangeUsername}
+                    className="form-control">        
+                </input>
             </div>
             <div className="form-group">
                 <label>Address:</label>
-                <input type="text" className="form-control"></input>
+                <input type="text"
+                    value={this.state.address}
+                    onChange={this.onChangeAddress}
+                    className="form-control">        
+                </input>
             </div>
             <div className="form-group">
                 <label>NIC number:</label>
-                <input type="text" className="form-control"></input>
+                <input type="text"
+                    value={this.state.nic_number}
+                    onChange={this.onChangeNICnumber}
+                    className="form-control">        
+                </input>
             </div>
             <div className="form-group" style={{marginTop:10}}>
                 <input type="submit" value="Add User" className="btn btn-primary"></input>
