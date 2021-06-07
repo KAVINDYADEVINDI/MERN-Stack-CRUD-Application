@@ -18,8 +18,8 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_DB,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    onfulfilled
-    onrejected:err=>{console.log('cannot connect to database'+err)}
+    // onfulfilled:()=>{console.log('connect to database')},
+    // onrejected:err=>{console.log('cannot connect to database'+err)}
 })
 
 //connect server 
