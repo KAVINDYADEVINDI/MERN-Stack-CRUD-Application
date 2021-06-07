@@ -2,6 +2,22 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Create extends Component{
+
+constructor(props){
+    super(props);
+    this.onChangeUsername=this.onChangeUsername.bind(this);
+    this.onChangeAddress=this.onChangeAddress.bind(this);
+    this.onChangeNICnumber=this.onChangeNICnumber.bind(this);
+    this.onSubmit=this.onSubmit.bind(this);
+
+    this.state={
+        user_name:'',
+        address:'',
+        nic_number:''
+    }
+    
+}
+
   render(){
     return(
       <div style={{marginTop:10}}>
