@@ -42,7 +42,8 @@ constructor(props){
           address:this.state.address,
           nic_number:this.state.nic_number,
       }
-      axios.post(url:);
+      axios.post('/user/add',obj);
+
        this.setState({
            user_name:'',
            address:'',

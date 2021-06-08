@@ -10,7 +10,7 @@ let User=new Schema(
         address:{
             type:String
         },
-        NIC_number:{
+        nic_number:{
             type:Number
         },
 

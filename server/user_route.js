@@ -15,7 +15,7 @@ userRoutes.route('/add').post(function(req,res){
     })
     .catch(err=>{
         //if status in response is 400
-        res.status(400).send("unable to added successfully");
+        res.status(400).json("unable to added successfully");
     });
 
 });
