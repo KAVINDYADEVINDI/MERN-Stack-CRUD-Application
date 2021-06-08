@@ -32,7 +32,7 @@ class Index extends Component{
   render(){
     return(
       <div className="container">
-        <h3>User List</h3>
+        <h3 align="center" >User List</h3>
         <table className="table table-striped" style={{marginTop:20}}>
           <thead>
             <th>User Name</th>

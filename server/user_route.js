@@ -20,15 +20,16 @@ userRoutes.route('/add').post(function(req,res){
 
 });
 //get data
-userRoutes.route('/').get(function(req,res){
-  
-    user.find(function(user){
-        if(err)
-            console.log(err);
-        else{
-            res.json(user);
-        }
+userRoutes.route('/').get(async (req,res)=>{
+    await User.find().then(user=>{
+        res.json(user);
+    })
+    .catch(err=>{
+        res.status(400).json("unable to get data");
     });
+    // const user=await User.find();
+    // console.log(user);
+    // res.json(user);
 
 });
 

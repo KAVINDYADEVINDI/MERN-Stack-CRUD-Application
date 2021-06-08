@@ -18,9 +18,9 @@ dotenv.config();
 const config =require('./DB');
 const userRoutes = require('./user_route');
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
-app.use(bodyParser.urlencoded({extended:true}));
+//app.use(bodyParser.urlencoded({extended:true}));
 //use route
 app.use('/user',userRoute);
 
