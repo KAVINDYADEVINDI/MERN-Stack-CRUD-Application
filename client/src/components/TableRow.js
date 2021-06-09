@@ -5,8 +5,9 @@ import {Link} from 'react-router-dom';
 class TableRow extends Component {
 
      onDelete=(id)=>{
+          //send url to user_route.js
           axios.delete('/user/delete/'+id);
-          //this.props.history.push('/index');
+         
      }
     render() {
         return (
