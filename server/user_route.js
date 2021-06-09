@@ -5,6 +5,7 @@ const userRoutes=express.Router();
 //import user model.js
 const User=require('./user_model');
 
+
 //store data
 userRoutes.route('/add').post((req,res)=>{
     //get request from body
@@ -21,6 +22,8 @@ userRoutes.route('/add').post((req,res)=>{
     });
 
 });
+
+
 //get data
 userRoutes.route('/').get(async (req,res)=>{
     await User.find().then(user=>{
@@ -31,6 +34,7 @@ userRoutes.route('/').get(async (req,res)=>{
     });
 
 });
+
 
 //edit data
 userRoutes.route('/edit/:id').get((req,res)=>{
@@ -44,10 +48,11 @@ userRoutes.route('/edit/:id').get((req,res)=>{
 
 });
 
+
 //update data
-userRoutes.route('/update/:id').put(function(req,res){
+userRoutes.route('/update/:id').put((req,res)=>{
     let id=req.params.id;
-    User.findById(id,function(err,user){
+    User.findById(id,(err,user)=>{
         if(!user){
             res.status(404).send("data is not found");
         }
@@ -71,11 +76,12 @@ userRoutes.route('/update/:id').put(function(req,res){
 
 });
 
+
 //delete data
 userRoutes.route('/delete/:id').delete((req,res)=>{
     //get id from url
     let id=req.params.id;
-    User.findByIdAndDelete(id,function(err,user){
+    User.findByIdAndDelete(id,(err,user)=>{
         if(err)
             console.log(err);
         else{
@@ -85,4 +91,5 @@ userRoutes.route('/delete/:id').delete((req,res)=>{
     });
 
 });
+
 module.exports=userRoutes;
