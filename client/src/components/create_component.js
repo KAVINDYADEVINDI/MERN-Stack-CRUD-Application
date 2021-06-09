@@ -6,8 +6,10 @@ import axios from 'axios';
 
 class Create extends Component{
 
+    //create constructor
 constructor(props){
     super(props);
+    //define classes
     this.onChangeUsername=this.onChangeUsername.bind(this);
     this.onChangeAddress=this.onChangeAddress.bind(this);
     this.onChangeNICnumber=this.onChangeNICnumber.bind(this);
