@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 //create table rows
 class TableRow extends Component {
     render() {
@@ -15,7 +15,7 @@ class TableRow extends Component {
                     {this.props.obj.nic_number}
                </td>
                <td>
-                    <button className="btn btn-primary">Edit</button>
+                    <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
                </td>
                <td>
                     <button className="btn btn-primary">Delete</button>

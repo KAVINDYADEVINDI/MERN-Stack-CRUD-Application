@@ -44,7 +44,7 @@ userRoutes.route('/edit/:id').get(function(req,res){
 });
 
 //update data
-userRoutes.route('/update/:id').post(function(req,res){
+userRoutes.route('/update/:id').put(function(req,res){
     let id=req.params.id;
     user.findById(id,function(err,user){
         if(!user){
