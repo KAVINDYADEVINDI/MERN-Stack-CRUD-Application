@@ -24,17 +24,21 @@ app.use(express.json());
 app.use(cors());
 app.use('/user',userRoute);//use route
 
-mongoose.Promise=global.Promise;
+
 //connect mongodb
+mongoose.Promise=global.Promise;
+
 mongoose.connect(process.env.MONGO_DB,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
-.then(()=>{
+    .then(()=>{
     console.log('connect to database');
-})  
- .catch((err)=>
-console.log('connection error',err));
+    })  
+    .catch((err)=>
+    console.log('connection error',err)
+    );
+
 
 //connect server 
 app.listen(3001, () => { console.log("server is running") })
