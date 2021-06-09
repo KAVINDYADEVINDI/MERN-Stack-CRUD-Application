@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-//create schema
+//create schema in the database
 const Schema = mongoose.Schema;
 
 let User=new Schema(
