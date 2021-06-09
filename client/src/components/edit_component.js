@@ -35,7 +35,7 @@ class Edit extends Component{
       });
   }
 
-  onChangeUsername(e){
+onChangeUsername(e){
     this.setState({
         user_name:e.target.value
     });
@@ -58,6 +58,7 @@ onSubmit(e){
       address:this.state.address,
       nic_number:this.state.nic_number,
   }
+  //send user route.js with id and object
   axios.put('/user/update/'+this.props.match.params.id,obj);
 
    this.setState({
