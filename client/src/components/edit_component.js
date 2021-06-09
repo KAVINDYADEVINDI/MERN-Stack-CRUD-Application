@@ -3,14 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 class Edit extends Component{
-
+//create constructor
   constructor(props){
     super(props);
     this.onChangeUsername=this.onChangeUsername.bind(this);
     this.onChangeAddress=this.onChangeAddress.bind(this);
     this.onChangeNICnumber=this.onChangeNICnumber.bind(this);
     this.onSubmit=this.onSubmit.bind(this);
-
+    //create state
     this.state={
         user_name:'',
         address:'',
