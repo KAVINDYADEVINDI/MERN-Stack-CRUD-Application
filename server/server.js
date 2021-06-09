@@ -14,8 +14,9 @@ const app = express();
 //dotnev call
 dotenv.config();
 
-//call DB.js
+//import DB.js
 const config =require('./DB');
+//import user route.js
 const userRoutes = require('./user_route');
 
 
