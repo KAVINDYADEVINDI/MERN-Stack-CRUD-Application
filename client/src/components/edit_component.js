@@ -24,6 +24,7 @@ class Edit extends Component{
     // console.log(user);
       .then(response=>{
         this.setState({
+          //set data in the response
           user_name:response.data.user_name,
           address:response.data.address,
           nic_number:response.data.nic_number
