@@ -61,6 +61,7 @@ onSubmit(e){
   //send user route.js with id and object for update
   axios.put('/user/update/'+this.props.match.params.id,obj);
 
+  //again set state for dafault value
    this.setState({
        user_name:'',
        address:'',
