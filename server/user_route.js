@@ -1,7 +1,8 @@
 const express=require('express');
+// import routing for backend part
 const userRoutes=express.Router();
 
-
+//import user model.js
 const User=require('./user_model');
 
 //store data
@@ -9,6 +10,7 @@ userRoutes.route('/add').post(function(req,res){
     //get request from body
     let user=new User(req.body);
     //handle http request
+    //save data into the database
     user.save().then(user=>{
         //if status in response is 200
         res.status(200).json({'user':'New user added successfully'});
