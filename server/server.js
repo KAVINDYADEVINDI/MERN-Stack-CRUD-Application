@@ -38,3 +38,4 @@ console.log('connection error',err));
 
 //connect server 
 app.listen(3001, () => { console.log("server is running") })
+//3001 is server running port number
