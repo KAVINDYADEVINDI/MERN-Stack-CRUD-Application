@@ -1,7 +1,13 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 //create table rows
 class TableRow extends Component {
+
+     onDelete=(id)=>{
+          axios.delete('/user/delete/'+id);
+          //this.props.history.push('/index');
+     }
     render() {
         return (
            <tr>
@@ -18,7 +24,7 @@ class TableRow extends Component {
                     <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
                </td>
                <td>
-                    <Link to={"/delete/"+this.props.obj._id} className="btn btn-primary">Delete</Link>
+                    <a href="#" onClick={()=>this.onDelete(this.props.obj._id)} className="btn btn-primary">Delete</a>
                </td>
            </tr>
         )
