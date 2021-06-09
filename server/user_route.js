@@ -33,8 +33,10 @@ userRoutes.route('/').get(async (req,res)=>{
 });
 
 //edit data
-userRoutes.route('/edit/:id').get(function(req,res){
+userRoutes.route('/edit/:id').get((req,res)=>{
     let id=req.params.id;
+
+    //find userin database
     User.findById(id,(err,user)=>{
         res.json(user);
         
