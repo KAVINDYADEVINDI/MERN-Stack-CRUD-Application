@@ -10,7 +10,7 @@ class TableRow extends Component {
                </td>
                <td>
                     {this.props.obj.address}
-               </td>
+               </td> 
                <td>
                     {this.props.obj.nic_number}
                </td>
@@ -18,7 +18,7 @@ class TableRow extends Component {
                     <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
                </td>
                <td>
-                    <button className="btn btn-primary">Delete</button>
+                    <Link to={"/delete/"+this.props.obj._id} className="btn btn-primary">Delete</Link>
                </td>
            </tr>
         )

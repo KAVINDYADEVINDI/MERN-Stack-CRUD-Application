@@ -36,7 +36,7 @@ userRoutes.route('/').get(async (req,res)=>{
 //edit data
 userRoutes.route('/edit/:id').get(function(req,res){
     let id=req.params.id;
-    user.findById(id,function(err,user){
+    User.findById(id,function(err,user){
         res.json(user);
         
     });
@@ -46,7 +46,7 @@ userRoutes.route('/edit/:id').get(function(req,res){
 //update data
 userRoutes.route('/update/:id').put(function(req,res){
     let id=req.params.id;
-    user.findById(id,function(err,user){
+    User.findById(id,function(err,user){
         if(!user){
             res.status(404).send("data is not found");
         }
@@ -54,7 +54,7 @@ userRoutes.route('/update/:id').put(function(req,res){
             //update datas comes from request
             user.user_name=req.body.user_name;
             user.address=req.body.address;
-            user.NIC_number=req.body.NIC_number;
+            user.nic_number=req.body.nic_number;
 
             //save data to the database
             user.save().then(user=>{
@@ -71,9 +71,9 @@ userRoutes.route('/update/:id').put(function(req,res){
 });
 
 //delete data
-userRoutes.route('/delete/:id').get(function(req,res){
+userRoutes.route('/delete/:id').delete(function(req,res){
     let id=req.params.id;
-    user.findByIdAndRemove(id,function(err,user){
+    User.findByIdAndDelete(id,function(err,user){
         if(err)
             console.log(err);
         else{

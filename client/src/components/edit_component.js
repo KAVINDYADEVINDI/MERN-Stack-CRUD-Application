@@ -18,8 +18,9 @@ class Edit extends Component{
     }
   }
    //get data from database
-  componentDidMount(){
-    axios.get('/user/edit'+this.props.match.params.id)
+  async componentDidMount(){
+     await axios.get('/user/edit/'+this.props.match.params.id)
+    // console.log(user);
       .then(response=>{
         this.setState({
           user_name:response.data.user_name,
@@ -55,7 +56,7 @@ onSubmit(e){
       address:this.state.address,
       nic_number:this.state.nic_number,
   }
-  axios.put('/user/update'+this.props.match.params.id,obj);
+  axios.put('/user/update/'+this.props.match.params.id,obj);
 
    this.setState({
        user_name:'',
