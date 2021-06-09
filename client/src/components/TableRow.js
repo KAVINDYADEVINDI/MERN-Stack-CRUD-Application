@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 //create table rows
 class TableRow extends Component {
 
+     //when click delete button
      onDelete=(id)=>{
           //send url to user_route.js
           axios.delete('/user/delete/'+id);
