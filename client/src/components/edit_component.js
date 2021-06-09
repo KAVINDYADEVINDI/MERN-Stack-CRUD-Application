@@ -58,7 +58,7 @@ onSubmit(e){
       address:this.state.address,
       nic_number:this.state.nic_number,
   }
-  //send user route.js with id and object
+  //send user route.js with id and object for update
   axios.put('/user/update/'+this.props.match.params.id,obj);
 
    this.setState({
@@ -66,6 +66,7 @@ onSubmit(e){
        address:'',
        nic_number:''
     });
+    //redirect to index page
     this.props.history.push('/index');
 
 }
