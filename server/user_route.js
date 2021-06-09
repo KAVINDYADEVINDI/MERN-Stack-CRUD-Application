@@ -6,7 +6,7 @@ const userRoutes=express.Router();
 const User=require('./user_model');
 
 //store data
-userRoutes.route('/add').post(function(req,res){
+userRoutes.route('/add').post((req,res)=>{
     //get request from body
     let user=new User(req.body);
     //handle http request
@@ -29,16 +29,13 @@ userRoutes.route('/').get(async (req,res)=>{
     .catch(err=>{
         res.status(400).json("unable to get data");
     });
-    // const user=await User.find();
-    // console.log(user);
-    // res.json(user);
 
 });
 
 //edit data
 userRoutes.route('/edit/:id').get(function(req,res){
     let id=req.params.id;
-    User.findById(id,function(err,user){
+    User.findById(id,(err,user)=>{
         res.json(user);
         
     });
@@ -73,7 +70,8 @@ userRoutes.route('/update/:id').put(function(req,res){
 });
 
 //delete data
-userRoutes.route('/delete/:id').delete(function(req,res){
+userRoutes.route('/delete/:id').delete((req,res)=>{
+    //get id from url
     let id=req.params.id;
     User.findByIdAndDelete(id,function(err,user){
         if(err)
