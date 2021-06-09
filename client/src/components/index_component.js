@@ -5,9 +5,13 @@ import TableRow from './TableRow';
 
 class Index extends Component{
 
+  //ceate constuctor
   constructor(props){
     super(props);
-    this.state={user:[]};
+
+    this.state={
+      user:[]
+    };
   }
   //get data from database
   componentDidMount(){
@@ -24,7 +28,8 @@ class Index extends Component{
   //create table row
   tabRow(){
     //get data with keys
-    return this.state.user.map(function(object,i){
+    return this.state.user.map((object,i)=>{
+      //return data to tablerow.js
       return <TableRow obj={object} key={i} />;
     });
   }
