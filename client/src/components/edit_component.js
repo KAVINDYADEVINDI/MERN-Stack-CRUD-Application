@@ -19,6 +19,7 @@ class Edit extends Component{
   }
    //get data from database
   async componentDidMount(){
+    //call user route.js
      await axios.get('/user/edit/'+this.props.match.params.id)
     // console.log(user);
       .then(response=>{
