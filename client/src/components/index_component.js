@@ -31,6 +31,7 @@ class Index extends Component{
     return this.state.user.map((object,i)=>{
       //return data to tablerow.js
       return <TableRow obj={object} key={i} />;
+      //obj is a property of tablerow widget 
     });
   }
 

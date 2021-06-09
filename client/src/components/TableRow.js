@@ -9,6 +9,7 @@ class TableRow extends Component {
           axios.delete('/user/delete/'+id);
          
      }
+     //props mean property of tablerow in index_component.js
     render() {
         return (
            <tr>
